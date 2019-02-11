@@ -97,8 +97,12 @@ router.put('/editgame/:id', function(req,res){
     Entry.findOne({
         _id:req.params.id
     }).then(function(entry){
-        entry.title = req.body.title;
-        entry.genre = req.body.genre;
+        entry.bugTitle = req.body.bugTitle;
+        entry.projectName = req.body.projectName;
+        entry.reporterName = req.body.reporterName;
+        entry.bugType = req.body.bugType;
+        entry.bugState = req.body.bugState;
+        entry.bugDescription = req.body.bugDescription;
 
         entry.save()
         .then(function(idea){
@@ -107,7 +111,7 @@ router.put('/editgame/:id', function(req,res){
     });
 });
 
-//Route to entries.html
+//Route to login.html
 router.get('/login', function(req,res) {
     res.render('login');
 });
@@ -120,7 +124,7 @@ router.post('/login',function(req, res, next){
     })(req,res,next);
 });
 
-app.get('/', function(req,res) {
+app.get('/', ensureAuthenticated, function(req,res) {
     console.log("request made from fetch");
     Entry.find({})
     .then(function(entries){
@@ -140,8 +144,12 @@ router.get('/entries', function(req,res) {
 app.post('/addgame', function(req, res){
     console.log(req.body);
     var newEntry = {
-        title:req.body.title,
-        genre:req.body.genre
+        bugTitle:req.body.bugTitle,
+        projectName:req.body.projectName,
+        reporterName:req.body.reporterName,
+        bugType:req.body.bugType,
+        bugState:req.body.bugState,
+        bugDescription:req.body.bugDescription
     }
     new Entry(newEntry)
     .save()

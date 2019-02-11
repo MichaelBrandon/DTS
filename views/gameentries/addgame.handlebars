@@ -2,15 +2,26 @@
     <div class="col-md-6 mx-auto">
         <div class="card card-body">
             <form class="form-group" action="/addgame" method="POST">
-                <h3>Enter your game here</h3>
-                <label>Title of Game</label>
+                <h3>Enter Bug Here</h3>
+                <label>Name of Project</label>
+                <input type="text" name="projectName" required>
                 <br>
-                <input type="text" name="title" required>
+                <label>Title of Bug</label>
+                <input type="text" name="bugTitle" required>
                 <br>
-                <label>Description of Game</label>
-                <textarea name="genre" class="form-control"></textarea>
+                <label>Description of Bug</label>
+                <textarea name="bugDescription" class="form-control"></textarea>
                 <br>
-                <button type="submit" class="btn btn-primary">Submit Game</button>
+                <label>Reporter Name</label>
+                <input type="text" name="reporterName" required>
+                <br>
+                <label>Bug Type</label>
+                <input type="text" name="bugType" required>
+                <br>
+                <label>Bug State</label>
+                <input type="text" name="bugState" required>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit Bug</button>
             </form>
         </div>
     </div>

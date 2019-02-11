@@ -2,11 +2,27 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var EntrySchema = new Schema({
-    title:{
+    bugTitle:{
         type:String,
         required:true
     },
-    genre:{
+    projectName:{
+        type:String,
+        required:true
+    },
+    reporterName:{
+        type:String,
+        required:true
+    },
+    bugType:{
+        type:String,
+        required:true
+    },
+    bugState:{
+        type:String,
+        required:true
+    },
+    bugDescription:{
         type:String,
         required:true
     },
@@ -14,6 +30,9 @@ var EntrySchema = new Schema({
         type:Date,
         default:Date.now
     }
+
+
+
 
 });
 

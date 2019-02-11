@@ -2,16 +2,28 @@
     <div class="col-md-6 mx-auto">
         <div class="card card-body">
             <form class="form-group" action="/editgame/{{entry.id}}?_method=PUT" method="POST">
-                <h3>Edit your game here</h3>
-                <label>Edit Title of Game</label>
+                <h3>Edit Bug Here</h3>
                 <input type="hidden" name="_method" value="PUT">
                 <br>
-                <input type="text" name="title" value="{{entry.title}}" required>
+                <label>Name of Project</label>
+                <input type="text" name="projectName" value="{{entry.projectName}}" required>
                 <br>
-                <label>Edit Description of Game</label>
-                <textarea name="genre" class="form-control" required>{{entry.genre}}</textarea>
+                <label>Title of Bug</label>
+                <input type="text" name="bugTitle" value="{{entry.bugTitle}}" required>
                 <br>
-                <button type="submit" class="btn btn-primary">Update Game</button>
+                <label>Description of Bug</label>
+                <textarea name="bugDescription" class="form-control">{{entry.bugDescription}}</textarea>
+                <br>
+                <label>Reporter Name</label>
+                <input type="text" name="reporterName" value="{{entry.reporterName}}" required>
+                <br>
+                <label>Bug Type</label>
+                <input type="text" name="bugType" value="{{entry.bugType}}" required>
+                <br>
+                <label>Bug State</label>
+                <input type="text" name="bugState" value="{{entry.bugState}}" required>
+                <br>
+                <button type="submit" class="btn btn-primary">Update Bug</button>
             </form>
         </div>
     </div>
